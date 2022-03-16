@@ -21,14 +21,13 @@
         <tr>
             <td>@Html.DisplayFor(modelItem => item.tensach)</td>
             <td> <img src="@item.hinh" width="180" /></td>
-            @using (Html.BeginForm("CapNhapGioHang", "GioHang", new { @id = item.masach }))
+            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @id = item.masach }))
             {
                 <td>@String.Format("{0:0,0}", item.giaban) VND</td>
                 <td> <input type="number" min="1" name="txtSoLg" value="@item.iSoluong" /></td>
                 <td>@Html.DisplayFor(modelItem => item.dThanhtien)</td>
                 <td>
-                    <a href="@Url.Action("Detail","Sach",new { @id = item.masach })">Chi tiết</a> |
-                    @Html.ActionLink("Xóa", "XoaGioHang", new { @id = item.masach })
+                    <a href="@Url.Action("Detail","Sach",new { @id = item.masach })">Chi tiết</a> | @Html.ActionLink("Xóa", "XoaGioHang", new { @id = item.masach })
                 </td>
                 <td><input type="submit" value="Cập nhập" class="btn btn-success" /></td>
             }
