@@ -109,6 +109,26 @@ namespace Tuan4_NguyenLePhuongThao.Controllers
             lstGiohang.Clear();
             return RedirectToAction("Giohang");
         }
+        public ActionResult DatHang()
+        {
+            List<Giohang> lstGioHang = Laygiohang();
+            foreach (var item in lstGioHang)
+            {
+                var change = data.Saches.Where(x => x.masach == item.masach).FirstOrDefault();
+                if (change != null)
+                {
+                    if (change.soluongton > item.iSoluong)
+                    {
+                        var tempsl = change.soluongton - item.iSoluong;
+                        change.soluongton = tempsl;
+                        UpdateModel(change);
+                        data.SubmitChanges();
 
+                    }
+                }
+            }
+            return View(lstGioHang);
+            lstGioHang.Clear();
+        }
     }
 }

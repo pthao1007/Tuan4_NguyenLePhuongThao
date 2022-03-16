@@ -37,5 +37,6 @@ namespace Tuan4_NguyenLePhuongThao.Models
             giaban = double.Parse(s.giaban.ToString());
             iSoluong = 1;
         }
+
     }
 }
