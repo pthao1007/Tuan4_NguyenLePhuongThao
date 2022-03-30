@@ -31,10 +31,7 @@
             Hình:
         </dt>
         <dd>
-                @Html.ValidationMessageFor(model => model.hinh, "", new { @class = "text-danger" })
-                <input type="file" name="fileUpload" id="fileUpload" accept="image/*"
-                       style="display:none;" />
-                <img src="@Model.hinh" id="pictureUpload" />
+                <img src="@Model.hinh" />
         </dd>
 
         <dt>
